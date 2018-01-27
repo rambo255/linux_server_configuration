@@ -92,10 +92,10 @@ Once these changes are made, restart ssh: `sudo service restart ssh`
 Any user can login into the machine using a specify port: `sudo user@PublicIP -p 2200`
  
 ## Set ssh login using keys
-1. generate keys on local machine using`ssh-keygen` ; then save the private key in `~/.ssh` on local machine
-2. deploy public key on developement enviroment
+1. Generate keys on local machine using`ssh-keygen` for eg. `linux_conf` ; then save the private key in `~/.ssh` on local machine
+2. Deploy public key on developement enviroment
 
-	On yourvirtual machine:
+	On your virtual machine:
 	```
 	$ su - grader
 	$ mkdir .ssh
