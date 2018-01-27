@@ -4,7 +4,7 @@ We are deploying a flask application on to AWS Light Sail.  This document will g
 
 IP address: 35.170.69.46
 Port: 2200
-EC2 URL : http://ec2-35-170-69-46.compute-1.amazonaws.com/login
+EC2 URL : http://ec2-35-170-69-46.compute-1.amazonaws.com
 
 Please view this [github](https://github.com/rambo255/item_catalog.git) to use the application
 
