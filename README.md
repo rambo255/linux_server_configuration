@@ -28,14 +28,15 @@ Once we have created our ubuntu image, now we need to start configuring the serv
 
 Before setting up the server, we need to download the lightsail pem file from the LightSail website.  In order to get the file, you need to go the accounts page.
 Once you are in the accounts page, there is an option to download the default private key.
+After Downloading, move the private key into `~/.ssh` folder in your local machine.
 
 To see if you can login into instance. Two things need to be done:
 
 1. You need to change permission of the downloaded lightsail private key.
-`chmod 400 LightsailDefaultPrivateKey.pem` or `chmod 600 LightsailDefaultPrivateKey.pem`
+`chmod 400 default.pem` or `chmod 600 default.pem`
 
 2. To login:
-`ssh user@PublicIP -i LightsailDefaultPrivateKey`
+`ssh user@PublicIP -i default.pem. `ssh ubuntu@35.170.69.46 -i ~/.ssh/default.pem`
 
 ## Updating the server
 Since you are running ubuntu, its only two commands:
@@ -94,12 +95,11 @@ Any user can login into the machine using a specify port: `sudo user@PublicIP -p
 1. generate keys on local machine using`ssh-keygen` ; then save the private key in `~/.ssh` on local machine
 2. deploy public key on developement enviroment
 
-	On you virtual machine:
+	On yourvirtual machine:
 	```
 	$ su - grader
 	$ mkdir .ssh
-	$ touch .ssh/authorized_keys
-	$ vim .ssh/authorized_keys
+	$ nano /authorized_keys
 	```
 	Copy the public key generated on your local machine to this file and save
 	```
