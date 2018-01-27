@@ -36,7 +36,8 @@ To see if you can login into instance. Two things need to be done:
 `chmod 400 default.pem` or `chmod 600 default.pem`
 
 2. To login:
-`ssh user@PublicIP -i [privatekey]`
+`ssh user@PublicIP -i [privatekey]` 
+for eg. ssh ubuntu@35.170.69.46 -i ~/.ssh/default.pem
 
 ## Updating the server
 Since you are running ubuntu, its only two commands:
