@@ -36,7 +36,7 @@ To see if you can login into instance. Two things need to be done:
 `chmod 400 default.pem` or `chmod 600 default.pem`
 
 2. To login:
-`ssh user@PublicIP -i default.pem. `ssh ubuntu@35.170.69.46 -i ~/.ssh/default.pem`
+`ssh user@PublicIP -i [privatekey]`
 
 ## Updating the server
 Since you are running ubuntu, its only two commands:
@@ -188,7 +188,7 @@ Virtual Host file
 4. Move inside this directory using `cd FlaskApp`
 5. Clone the Catalog App to the virtual machine `git clone https://github.com/rambo255/item_catalog.git FlaskApp`
 6. Move to the inner FlaskApp directory using `cd FlaskApp`
-7. Rename `website.py` to `__init__.py` using `sudo mv website.py __init__.py`
+7. Rename `item_catalog.py` to `__init__.py` using `sudo mv item_catalog.py __init__.py`
 
 ### Flask
 Do these commands:
