@@ -229,7 +229,14 @@ Run `sudo python database_setup.py`
 
 ## Oauth Client Login
 
-To setup it up. Update the path in the application.py program. Update the client id and oauth_flow
+
+* To get the Google+ authorization working:
+    * Go to the project on the Developer Console: https://console.developers.google.com/project
+    * Navigate to APIs & auth > Credentials > Edit Settings
+    * add your host name and public IP-address to your Authorized JavaScript origins and your host name + oauth2callback to           Authorized redirect URIs, e.g. http://ec2-35-154-108-134.ap-south-1.compute.amazonaws.com/oauth2callback
+    * Update data-client id in `templates/login.html`
+
+Update the path in the __init__.py program. Update the client id and oauth_flow
 
 ```
 CLIENT_ID = json.loads(
@@ -237,5 +244,9 @@ CLIENT_ID = json.loads(
 
 oauth_flow = flow_from_clientsecrets('/var/www/itemsCatalog/vagrant/catalog/client_secrets.json', scope='')
 ```
+* restart apache
+        * `sudo service apache2 restart`
+
+
 ## References:
 https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
