@@ -112,7 +112,7 @@ Any user can login into the machine using a specify port: `sudo user@PublicIP -p
 4. now you can use ssh to login with the new user you created
 
 	`ssh -i [privateKeyFilename] grader@35.170.69.46` 
-	for eg.  ssh grader@35.170.69.46 -i ~/.ssh/private 
+	for eg.  ssh grader@35.170.69.46 -i ~/.ssh/private -p 2200 
 
 ## Configuring Firewall rules using UFW
 We need to configure firewall rules using UFW. Check to see if ufw is active: `sudo ufw status`. If not active, lets add some rules
