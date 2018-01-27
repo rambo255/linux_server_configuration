@@ -1,10 +1,10 @@
 # Linux Server Configuration project
 
-We are deploying a flask application on to AWS Light Sail.  This document will give you steps from creating your instance to your application.  At the time when this document is written, ubuntu 16.06 LTS is the standard. Here is the final website link: [Item Catalog App](http://35.170.69.46/)
+We are deploying a flask application on to AWS Light Sail.  This document will give you steps from creating your instance to your application.  At the time when this document is written, ubuntu 16.06 LTS is the standard. Here is the final website link: [Item Catalog App](http://35.170.69.46)
 
 IP address: 35.170.69.46
 Port: 2200
-EC2 URL : http://ec2-35-170-69-46.compute-1.amazonaws.com/
+EC2 URL : http://ec2-35-170-69-46.compute-1.amazonaws.com/login
 
 Please view this [github](https://github.com/rambo255/item_catalog.git) to use the application
 
