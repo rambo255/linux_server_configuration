@@ -4,7 +4,7 @@ We are deploying a flask application on to AWS Light Sail.  This document will g
 
 IP address: 35.170.69.46
 Port: 2200
-
+EC2 URL : http://ec2-35-170-69-46.compute-1.amazonaws.com/
 
 Please view this [github](https://github.com/rambo255/item_catalog.git) to use the application
 
@@ -163,6 +163,7 @@ Virtual Host file
 <VirtualHost *:80>
 		ServerName 35.170.69.46
 		ServerAdmin kirtivardhan.rai25995@gmail.com
+		ServerAlias http://ec2-35-170-69-46.compute-1.amazonaws.com
 		WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
 		<Directory /var/www/FlaskApp/FlaskApp/>
 			Order allow,deny
@@ -199,7 +200,6 @@ sudo pip install oauth2client requests httplib2
 
 ## Install PostGreSql
 Install PostGreSql `sudo apt-get install postgresql`
-To make sure remote are not allowed, please check the following configuration file: `sudo nano /etc/postgresql/9.5/main/pg_hba.conf`
 
 ### Create database
 `sudo su - postgres`
@@ -233,16 +233,16 @@ Run `sudo python database_setup.py`
 * To get the Google+ authorization working:
     * Go to the project on the Developer Console: https://console.developers.google.com/project
     * Navigate to APIs & auth > Credentials > Edit Settings
-    * add your host name and public IP-address to your Authorized JavaScript origins and your host name + oauth2callback to           Authorized redirect URIs, e.g. http://ec2-35-154-108-134.ap-south-1.compute.amazonaws.com/oauth2callback
+    * add your host name and public IP-address to your Authorized JavaScript origins and your host name + oauth2callback to           Authorized redirect URIs, e.g.http://ec2-35-170-69-46.compute-1.amazonaws.com/login
     * Update data-client id in `templates/login.html`
 
 Update the path in the __init__.py program. Update the client id and oauth_flow
 
 ```
 CLIENT_ID = json.loads(
-    open('/var/www/itemsCatalog/vagrant/catalog/client_secrets.json', 'r').read())['web']['client_id']
+    open('/var/www/FlaskApp/FlaskApp/client_secrets.json', 'r').read())['web']['client_id']
 
-oauth_flow = flow_from_clientsecrets('/var/www/itemsCatalog/vagrant/catalog/client_secrets.json', scope='')
+oauth_flow = flow_from_clientsecrets('/var/www/FlaskApp/FlaskApp/client_secrets.json', scope='')
 ```
 * restart apache
         * `sudo service apache2 restart`
