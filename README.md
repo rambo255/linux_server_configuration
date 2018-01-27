@@ -181,7 +181,7 @@ Virtual Host file
   
   ```
   
-### Install git, clone and setup your Item Catalog App project.
+### Git, clone and setup your Item Catalog App project.
 1. Install Git using `sudo apt-get install git`
 2. Use `cd /var/www` to move to the /var/www directory 
 3. Create the application directory `sudo mkdir FlaskApp`
